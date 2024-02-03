@@ -247,7 +247,7 @@ function startTimer(condition, time) {
 
     timerInterval = setInterval(() => {
       updateTimer(); // Update the timer display
-    }, 3000);
+    }, 6000);
   } else if (condition === false) {
     stopTimer(); // Stop the timer
   }}
