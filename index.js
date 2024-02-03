@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", initializePage);
 function startGame(){
   startPage.style.display='none';
   startPageButton.style.display='none';
-  // musicSound.play();
+  musicSound.play();
   addQuiz();
 }
 
@@ -340,7 +340,7 @@ function addQuiz() {
           <span class="label">${el.Answer_Description}</span></button>`;
   });
 
-  // startTimer(true);
+  startTimer(true);  
 }
 //Gameover Popup Declared
 function showGameOverPopup() {
