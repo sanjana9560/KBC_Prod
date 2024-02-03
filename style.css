@@ -1,0 +1,591 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("bg-01.png");
+    min-height: 100vh; 
+    height: auto;
+     overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.main-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+#quiz-box{
+    width: 100vw;
+    /* margin-top: 15%; */
+}
+
+
+
+
+#ques {
+    width: 100vw;
+    height: 20vh;
+
+    position: relative;
+    background: linear-gradient(rgba(222, 219, 64, 1), rgba(234, 124, 36, 1), rgba(227, 37, 44, 1), rgba(222, 221, 65, 1), rgba(227, 37, 44, 1), rgba(234, 124, 36, 1), rgba(224, 206, 60, 1)
+    );
+    clip-path: polygon(22% 18%, 80% 18%, 98% 48%, 82% 77%, 25% 78%, 4% 51%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+    /* text-align: center; Center the text */
+    white-space: normal; /* Allow text to wrap */
+    overflow: hidden;
+    font-weight: 700;
+    line-height: 1.4; /* Adjust line height for better readability */
+}
+
+/* Limit text to two lines */
+#ques::after {
+    content: '';
+    display: block;
+    height: 2.8em; /* You can adjust this value to control the number of lines */
+    margin-top: -2.8em; /* Negative margin to pull up the clipped text */
+    background: linear-gradient(transparent 60%, white); /* Gradient to fade out the clipped text */
+}
+
+
+
+
+#ques::before {
+    content: "";
+    width: 97vw;
+    height: 18vh;
+    position: absolute;
+    /* background-color: rgb(106, 93, 250); */
+    background-color: #6D4B9D;
+    clip-path: polygon(22% 18%, 80% 18%, 98% 48%, 82% 77%, 25% 78%, 4% 51%);
+    z-index: -1;
+}
+
+#option-container{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    /* gap: 20px; */
+}
+.start-page {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f0f0f0;
+  z-index: 5;
+}
+
+.start-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container without distortion */
+}
+
+#startButton {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* width: 13vw; */
+  padding: 10px 65px;
+  font-size: 2.5rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 800;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 50vh;
+  cursor: pointer;
+  background-color: rgb(246, 76, 14);
+  z-index: 5;
+  filter: brightness(1.5);
+  color: #fff;
+  margin-top: 25rem;
+  border: 1px solid white;
+}
+
+
+
+
+
+.option {
+    flex-grow: 1; /* Allow the options to grow and shrink based on content */
+    min-width: 0; /* Allow the container to be smaller than its content */
+    width: 50vw;
+    height: 20vh;
+    position: relative;
+    background: linear-gradient(rgba(222, 219, 64, 1), rgba(234, 124, 36, 1), rgba(227, 37, 44, 1), rgba(222, 221, 65, 1), rgba(227, 37, 44, 1), rgba(234, 124, 36, 1), rgba(224, 206, 60, 1));
+    clip-path: polygon(22% 18%, 80% 18%, 98% 48%, 82% 77%, 25% 78%, 4% 51%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.3rem;
+    text-align: justify;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 30px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    /* text-overflow: ellipsis; */
+    /* width: 40ch;
+    white-space: nowrap; */
+
+}
+.option>span{
+  white-space: nowrap; 
+  width: 35ch; 
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+ 
+}
+
+
+
+
+
+.option::before {
+    content: "";
+    width: 48vw;
+    height: 18vh;
+    position: absolute;
+   background: #6D4B9D;
+    clip-path: polygon(22% 18%, 80% 18%, 98% 48%, 82% 77%, 25% 78%, 4% 51%);
+    z-index: -1;
+    padding: 25x;
+
+}
+
+.popup-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.popup-content > img {
+
+  height: 60vh;
+  width:100%;
+  align-items: center;
+}
+
+.label {
+    z-index: 1;
+    position: relative;
+}
+.logo-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    .logo-img {
+        position: absolute;
+        top: 6%;
+        background-image: url("logo2.png");
+        background-size: cover; /* Adjust as needed */
+        background-position: center; /* Adjust as needed */
+        width: 20vh;
+        height: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 0;
+        /* left: 45%; */
+    }
+    
+    #time-box{
+        min-height:6vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    
+    }
+    
+    #timer-sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    }
+
+    .option.correct-answer::before {
+        background-color: green !important;
+    }
+    
+    .option.wrong-answer::before {
+        background-color: red !important;
+    }
+
+    #score{
+        font-size: 40px;
+        color: white;
+    }
+    
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100v;
+}
+.first-div{
+    height: 25vh;
+}
+
+.second-div{
+  height: 62vh;
+    /* height: auto; */
+    overflow-y: auto;
+}
+/* #quiz{
+    margin-top: 5%;
+} */
+    
+
+/* Media query for screens with a width up to 480 pixels */
+@media only screen and (max-width: 480px) {
+  body{
+    overflow-x: auto;
+  }
+    
+    #ques {
+        width: auto;
+        height: auto;
+        position: relative;
+        background: #6D4B9D;
+        clip-path: none;
+        justify-content: start;
+        font-size: 20px;
+        color: white;
+        font-size: 1rem;
+        padding: 20px;
+        border: 5px solid;
+        border-image:linear-gradient(rgba(222, 219, 64, 1), rgba(234, 124, 36, 1), rgba(227, 37, 44, 1));
+        border-image-slice: 1;
+        margin-inline: 10px;
+    }
+
+    #option-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 1rem;
+    }
+
+
+    /* .option {
+        width: auto;
+        height: auto;
+        position: relative;
+        background: #6D4B9D;
+        clip-path: none;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        font-size: 18px;
+        color: white;
+        font-size: 1rem;
+        padding: 12px;
+        border: 5px solid;
+        border-image:linear-gradient(rgba(222, 219, 64, 1), rgba(234, 124, 36, 1),rgba(227, 37, 44, 1));
+        border-image-slice: 1;
+        
+    } */
+
+
+    .option {
+      flex-grow: 1; 
+      min-width: 0; 
+      width: 100vw;
+      height: 11vh;
+      position: relative;
+      background: linear-gradient(rgba(222, 219, 64, 1), rgba(234, 124, 36, 1), rgba(227, 37, 44, 1), rgba(222, 221, 65, 1), rgba(227, 37, 44, 1), rgba(234, 124, 36, 1), rgba(224, 206, 60, 1));
+      clip-path: polygon(22% 18%, 80% 18%, 98% 48%, 82% 77%, 25% 78%, 4% 51%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
+      text-align: justify;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 30px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      /* text-overflow: ellipsis; */
+      /* width: 40ch;
+      white-space: nowrap; */
+  
+  }
+  /* .option>span{
+    white-space: nowrap; 
+    width: 20ch; 
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  } */
+  
+  
+  .option::before {
+      content: "";
+      width: 96vw;
+      height: 9vh;
+      position: absolute;
+     background: #6D4B9D;
+      clip-path: polygon(22% 18%, 80% 18%, 98% 48%, 82% 77%, 25% 78%, 4% 51%);
+      z-index: -1;
+      padding: 25x;
+  
+  }
+
+
+
+
+
+.option>span{
+  white-space: nowrap; 
+  width: 30ch; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+ 
+}
+    .logo-img {
+        position: absolute;
+        top: 6%;
+        background: url(logo2.png);
+        background-size: cover;
+        background-position: center center;
+        /* width: 39vw;
+        height: 18vh; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    
+    
+
+    .option.correct-answer {
+        background-color: green !important;
+    }
+    
+    .option.wrong-answer {
+        background-color: red !important;
+    }
+    #gameOverPopup{
+      /* background-image:url('../GameoverPopup.png'); */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    
+  
+    }
+    .popup-content > img {
+
+      height: 50vh;
+      width: 95%;
+      align-items: center;
+    }
+    }
+
+
+
+
+
+    #timer {
+        display: flex;
+      }
+      
+      .timer-box {
+        margin-right: 10px; /* Adjust the margin as needed */
+      }
+      
+
+     
+      .circle {
+        width: 2.5vh; /* Increase width */
+        height: 2.5vh; /* Increase height */
+        /* background: rgb(2,0,36); */
+        border-radius: 261px;
+        background: radial-gradient(49.81% 49.81% at 50.19% 50.19%, #C699E5 0%, #1C004D 85.89%);
+
+        /* background: linear-gradient(90deg, rgb(106, 93, 250) 10%,   rgb(42, 38, 84) 55%);        */
+        border: 2px solid rgb(218, 218, 52); /* Increase border size */
+        border-radius: 100%;
+        /* margin-right: 5px; Adjust the margin as needed */
+        font-size: 16px; /* Maintain the desired font size */
+        display: flex;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+      
+    
+      
+     
+
+
+      /* Loader CSS */
+      
+    #loader{
+    width: 100vw;
+    min-height: 102vh;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+    background: radial-gradient(49.81% 49.81% at 50.19% 50.19%, #C699E5 0%, #1C004D 85.89%);
+    /* background: #272727; */
+  }
+  .containerLoader{
+    position: relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  
+  .ring{
+    position:absolute;
+    height: 200px;
+    width: 200px;
+    border: 0px solid #272727;
+    border-radius:50%;
+  }
+  
+  .ring:nth-child(1){
+    border-bottom-width: 10px;
+    border-color: #ca2c92;
+    animation: rotate1 1.5s linear infinite;
+  }
+  
+  .ring:nth-child(2){
+    border-right-width: 10px;
+    border-color: #00ffff;
+    animation: rotate2 1.5s linear infinite;
+  }
+  
+  .ring:nth-child(3){
+    border-top-width: 10px;
+    border-color: #E0E722;
+    animation: rotate3 1.5s linear infinite;
+  }
+  
+  
+  @keyframes rotate1{
+    0%{
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg)
+    }
+    100%{
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg)
+    }
+  }
+  @keyframes rotate2{
+    0%{
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg)
+    }
+    100%{
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg)
+    }
+  }
+  @keyframes rotate3{
+    0%{
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg)
+    }
+    100%{
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg)
+    }
+  }
+ 
+
+  #rotateMessage {
+    font-size: 20px;
+    height: 100vh;
+    width: 100vw !important;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+     background: radial-gradient(49.81% 49.81% at 50.19% 50.19%, #C699E5 0%, #1C004D 85.89%);;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+ 
+    display: none; /* Initially hide the message */
+  }
+
+
+  @media only screen and (max-width: 1024px) and (orientation: landscape) {
+    /* Your CSS styles for landscape mode on mobile devices */
+    body {
+        background: radial-gradient(49.81% 49.81% at 50.19% 50.19%, #C699E5 0%, #1C004D 85.89%);
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        z-index: 1000;
+        overflow: hidden; /* Prevent scrolling when the message is displayed */
+      }
+      #container{
+        display: none;
+      }
+     #rotateMessage{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+     }
+
+  }
+
+  .phone {
+    height: 50px;
+    width: 100px;
+    border: 3px solid white;
+    
+    border-radius: 10px;
+    animation: rotate 1.5s ease-in-out infinite alternate;
+    /* display: none; */
+  }
+
+
+  @keyframes rotate {
+    0% {
+          transform: rotate(0deg)
+      }
+      50% {
+          transform: rotate(-90deg)
+      }
+      100% {
+          transform: rotate(-90deg)
+      }
+  }
+  

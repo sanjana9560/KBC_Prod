@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+    <title>KBC MINIGAME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+
+    <div id="rotateMessage">
+        <div class="phone">
+
+        </div>
+       <span>Rotate Your Device</span> 
+    </div>
+    <div class="start-page" id="start-page" >
+        <img src="wordbinded-start-screen.png" alt="srcset">
+    </div>
+
+    <button id="startButton" onclick="startGame()" >Play</button>
+
+    <div id="loader" >
+        <div class="containerLoader">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <strong style="font-size: 1.3em;color:#ffff">Welcome</strong>
+        </div>
+       
+    </div>
+
+    <div class="container" id="container">
+        <div class="first-div">
+
+
+
+            <div class="logo-box">
+                <div class="logo-img" id="logo-img">
+                    <!-- <img class="logo" src="1 (1) (1).png" alt="Your Alt Text"> -->
+                    <div id="score">0</div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="second-div">
+
+            <div class="main-box">
+
+                <div id="quiz">
+
+
+                    <div id="quiz-box">
+                        <div id="time-box">
+                            <div id="timer-sec"></div>
+                        </div>
+                        <div  id="ques"><span id="ques"></span></div>
+
+
+                        <div id="option-container">
+                            <!-- <div class="option">3232</div> -->
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+
+    </div>
+    <div id="gameOverPopup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <img src="./GameoverPopup.png" alt="gameOverPopup" height="70%" width="80%">
+            <!-- <h2>Game Over</h2>
+            <p>Your final score: <span id="finalScore"></span></p>
+            <button onclick="closeGameOverPopup()">Close</button> -->
+        </div>
+    </div>
+
+
+        <script src="index.js"></script>
+      
+</body>
+
+</html>
