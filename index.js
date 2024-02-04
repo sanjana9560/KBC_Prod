@@ -249,7 +249,7 @@ function startTimer(condition, time) {
       updateTimer(); // Update the timer display
     }, 6000);
   } else if (condition === false) {
-    stopTimer(); // Stop the timer
+    stopTimer();
   }}
 
 let selectedIndex = 0;

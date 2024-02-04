@@ -82,6 +82,15 @@ body{
     z-index: -1;
 }
 
+
+ /* #option>span{
+    white-space: nowrap; 
+    width: 20ch; 
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  } */
+
 #option-container{
     display: grid;
     grid-template-columns: 2fr 2fr;
@@ -258,7 +267,7 @@ body{
 }
 
 .second-div{
-  height: 62vh;
+  height: 61h;
     /* height: auto; */
     overflow-y: auto;
 }
@@ -273,31 +282,50 @@ body{
     overflow-x: auto;
   }
     
-    #ques {
-        width: auto;
-        height: auto;
-        position: relative;
-        background: #6D4B9D;
-        clip-path: none;
-        justify-content: start;
-        font-size: 20px;
-        color: white;
-        font-size: 1rem;
-        padding: 20px;
-        border: 5px solid;
-        border-image:linear-gradient(rgba(222, 219, 64, 1), rgba(234, 124, 36, 1), rgba(227, 37, 44, 1));
-        border-image-slice: 1;
-        margin-inline: 10px;
-    }
+  #ques {
+    width: 100vw;
+    height: 18vh;
+    position: relative;
+    font-size: 1rem;
+    color: white;
+    font-size: 1rem;
+    padding: 4rem;
+    text-align: center;
+    border: 5px solid;
+    border-image: linear-gradient(rgba(222, 219, 64, 1), rgba(234, 124, 36, 1), rgba(227, 37, 44, 1));
+    border-image-slice: 1;
+  }
+
+  #ques::before {
+    content: "";
+    width: 95vw;
+    height: 16vh;
+    position: absolute;
+    background-color: #6D4B9D;
+    clip-path: polygon(22% 18%, 80% 18%, 98% 48%, 82% 77%, 25% 78%, 4% 51%);
+    z-index: -1;
+  }
+
+  #ques > span {
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom; /* Align the span to the bottom */
+  }
+
 
     #option-container {
         display: grid;
         grid-template-columns: 1fr;
-        margin-top: 1rem;
+        margin-inline: 10px;
+        gap: 10px;
+        /* margin-top: 1rem; */
     }
 
 
-    /* .option {
+    .option {
         width: auto;
         height: auto;
         position: relative;
@@ -306,21 +334,20 @@ body{
         display: flex;
         align-items: center;
         justify-content: start;
-        font-size: 18px;
+        font-size: 1.2rem;
         color: white;
-        font-size: 1rem;
         padding: 12px;
         border: 5px solid;
         border-image:linear-gradient(rgba(222, 219, 64, 1), rgba(234, 124, 36, 1),rgba(227, 37, 44, 1));
         border-image-slice: 1;
         
-    } */
+    }
 
 
-    .option {
-      flex-grow: 1; 
-      min-width: 0; 
-      width: 100vw;
+    /* .option { */
+      /* flex-grow: 1; Allow the options to grow and shrink based on content */
+      /* min-width: 0; Allow the container to be smaller than its content */
+      /* width: 100vw;
       height: 11vh;
       position: relative;
       background: linear-gradient(rgba(222, 219, 64, 1), rgba(234, 124, 36, 1), rgba(227, 37, 44, 1), rgba(222, 221, 65, 1), rgba(227, 37, 44, 1), rgba(234, 124, 36, 1), rgba(224, 206, 60, 1));
@@ -335,12 +362,12 @@ body{
       overflow: hidden;
       padding: 30px;
       word-wrap: break-word;
-      white-space: pre-wrap;
+      white-space: pre-wrap; */
       /* text-overflow: ellipsis; */
       /* width: 40ch;
       white-space: nowrap; */
   
-  }
+  /* } */
   /* .option>span{
     white-space: nowrap; 
     width: 20ch; 
@@ -350,7 +377,7 @@ body{
   } */
   
   
-  .option::before {
+  /* .option::before {
       content: "";
       width: 96vw;
       height: 9vh;
@@ -360,7 +387,7 @@ body{
       z-index: -1;
       padding: 25x;
   
-  }
+  } */
 
 
 
